@@ -4,7 +4,7 @@ import json
 
 # connect to mysql
 DB_NAME = 'taipeiTrip'
-cnx = mysql.connector.connect(user='root',
+cnx = mysql.connector.connect(user='abc',
                               password='12345678',
                               auth_plugin='mysql_native_password')
 cursor = cnx.cursor()
