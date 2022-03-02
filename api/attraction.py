@@ -8,7 +8,7 @@ attractions = Blueprint('attractionApi', __name__)
 
 
 def getID(id):
-    cnx = mysql.connector.connect(user='root',
+    cnx = mysql.connector.connect(user='abc',
                                   password='12345678',
                                   database="taipeiTrip",
                                   auth_plugin='mysql_native_password')
@@ -24,7 +24,7 @@ def getID(id):
 
 
 def getResults(pages):
-    cnx = mysql.connector.connect(user='root',
+    cnx = mysql.connector.connect(user='abc',
                                   password='12345678',
                                   database="taipeiTrip",
                                   auth_plugin='mysql_native_password')
@@ -40,7 +40,7 @@ def getResults(pages):
 
 
 def getKeywords(keyword, pages):
-    cnx = mysql.connector.connect(user='root',
+    cnx = mysql.connector.connect(user='abc',
                                   password='12345678',
                                   database="taipeiTrip",
                                   auth_plugin='mysql_native_password')
@@ -140,6 +140,10 @@ def getAttractions():
                 new_data['longtitude'] = ele[8]
                 new_data['images'] = json.loads(ele[9])
                 attractionList.append(new_data)
+
+            if len(attractionList) < 12:
+                nextPage = None
+
             
 
             data = {"nextPage" : nextPage,
