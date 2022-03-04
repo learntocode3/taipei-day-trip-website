@@ -40,7 +40,7 @@ TABLES['attractions'] = (
     "  `description` TEXT NOT NULL,"
     "  `address` VARCHAR(255) NOT NULL,"
     "  `transport` TEXT NOT NULL,"
-    "  `mrt` VARCHAR(255),"
+    "  `mrt` VARCHAR(255) DEFAULT NULL,"
     "  `latitude` DOUBLE NOT NULL,"
     "  `longtitude` DOUBLE NOT NULL,"
     "  `images` JSON,"

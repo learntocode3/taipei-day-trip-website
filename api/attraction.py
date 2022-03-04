@@ -21,6 +21,9 @@ def getID(id):
     cnx.close()
     return results
 
+#a = getID(6)
+#print(a)
+
 
 
 def getResults(pages):
@@ -59,8 +62,10 @@ def getKeywords(keyword, pages):
 def getDataById(attractionId):
     try:
         results = getID(attractionId)
+        #print(results)
         if results:
-            attraction = []
+            #attraction = []
+            data = {}
             for ele in results:
                 new_data = {}
                 new_data['id'] = ele[0]
@@ -73,14 +78,18 @@ def getDataById(attractionId):
                 new_data['latitude'] = ele[7]
                 new_data['longtitude'] = ele[8]
                 new_data['images'] = json.loads(ele[9])
-                attraction.append(new_data)
-            data = {"data":attraction}
+                data['data'] = new_data
+                #attraction.append(new_data)
+            #data = {"data":attraction}
             return jsonify(data)
         else:
             return {"error":True, "message": "景點編號不正確"}, 400
     except:
 
         return {"error" : True, "message" : "伺服器內部錯誤"}, 500
+
+# b = getDataById(6)
+# print(b)
     
 
 
