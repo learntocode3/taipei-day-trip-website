@@ -1,0 +1,163 @@
+
+.top{
+    display: flex;
+    justify-content: center;
+}
+.frame{
+    width:1200px;
+    display:flex;   /*horizontal display*/
+}
+.left{
+   flex: none;  /*這個配置是固定的*/
+   width: 150px;
+   font-family: Noto Sans TC;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 30px;
+   color: #448899;
+}
+.right{
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #666666;
+    display:flex;
+    justify-content: flex-end;  /*水平靠右對齊*/
+    flex: auto;     /*自動填滿*/
+    
+}
+.item{
+    margin: 10px;
+}
+
+.slogan{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, #AADDEE 0%, #66AABB 100%);
+    margin-bottom: 55px;
+}
+.welcome{    
+    height: 169px;
+    width: 1200px;
+    padding: 106px ;
+    padding-left: 19%;   
+}
+.welcome1{
+    position: absolute;
+    right: 10%;
+    overflow: hidden;
+}
+
+.text1{
+    width: 400px;
+    text-align:left;
+    font-size: 28px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: bold;
+    color: #F8F8F8;
+
+    
+}
+.text2{
+    width: 400px;
+    text-align:left;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    color: #F8F8F8;
+}
+
+
+
+.form{
+    display: flex;
+    height: 46px;
+}
+.search{   
+    background: #FFFFFF;
+    height:46px;
+    width: 400px;
+    text-indent: 15px;
+
+}
+.littleSearchIcon{    
+    min-height: 52px;
+    min-width: 60px;
+    border: 0;
+    background: #448899;
+}
+
+.bigContainer{
+    display:flex;             /*容器*/
+    flex-wrap: wrap;         /*此指令可以使圖從4行慢慢壓縮成2行*/
+    justify-content: center;  /*div裏的div置中*/    
+    max-width: 1200px;        /*題目固定*/     
+    margin: auto;             /*刪掉會往左邊移動*/
+    margin-bottom: 0px;
+    
+}
+
+.twelve{
+    width: 270px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 30px;
+    border: 1px solid #E8E8E8;
+}
+
+.attractions{
+    width: 100%;
+    aspect-ratio: 4/3; 
+       /* 圖片跟文字中間的白色會消除*/
+}
+
+.attractionText{
+    font-size: 16px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    color: #757575;
+}
+
+
+
+.mrtCat{
+    display:flex;
+    
+}
+
+
+.attractionMrt{
+    margin-left: 10px;
+    margin-bottom: 12px;
+
+    font-size: 16px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    color: #757575;
+}
+
+
+.attractionCategory{
+    display:flex;
+    justify-content: flex-end;  /*水平靠右對齊*/
+    flex: auto;     /*自動填滿*/
+    margin-right: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    color: #757575;
+}
