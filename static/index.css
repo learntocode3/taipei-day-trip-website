@@ -32,6 +32,7 @@
 }
 
 .slogan{
+    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -47,7 +48,9 @@
 }
 .welcome1{
     position: absolute;
-    right: 10%;
+    
+    left: 60%;
+    bottom: 0;
     overflow: hidden;
 }
 
@@ -160,4 +163,30 @@
     font-style: normal;
     font-weight: normal;
     color: #757575;
+}
+
+
+
+
+@media(max-width:1200px){
+    .welcome1{
+        position: absolute;
+        left: 60%;
+        width:50%;
+        
+    }
+    .twelve{width: 45%;}
+    .search{
+        width: 230px;
+    }
+}
+
+@media(max-width:600px){
+    .twelve{width: 90%;}
+    .text1{width: 320px;}
+    .text1{width: 320px;}
+    .search{
+        width: 230px;
+    }
+
 }

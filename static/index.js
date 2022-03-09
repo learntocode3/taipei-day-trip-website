@@ -171,6 +171,7 @@ function getKeyword(evt){
 
         attractionContainer.appendChild(fragment);
         } else {
+            attractionContainer.innerHTML ='沒有資料';
             window.removeEventListener('scroll', handleScroll);
         }       
         canFetchAttractions = true;
