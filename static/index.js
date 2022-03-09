@@ -104,6 +104,39 @@ function createAttractionsUrl(){
     return url;
 }
 
+/*
+function getKeyword(){
+    let search = document.getElementById("abc")
+    //console.log(search.value)
+    
+    attractionContainer.innerHTML ='';
+    window.removeEventListener('scroll', handleScroll);
+    fetch(API_BASE_URL+`?page=0&keyword=${search.value}`)
+    .then(res => res.json())
+    .then(({data, nextPage}) =>{
+        const fragment = document.createDocumentFragment();
+        if (nextPage){
+            data.forEach(({images, name, mrt, category}) => {
+            let twelve = document.createElement("div");
+            twelve.className = "twelve";
+            twelve.appendChild(createAttractionImg(images));
+            twelve.appendChild(createAttractionText(name));
+            let mrtCat = document.createElement('div')
+            mrtCat.className = 'mrtCat';
+            mrtCat.appendChild(createAttractionMrt(mrt));
+            mrtCat.appendChild(createAttractionCategory(category));
+            twelve.appendChild(mrtCat)
+            fragment.appendChild(twelve)
+            });
+
+        attractionContainer.appendChild(fragment);
+        } else {
+            //attractionContainer.innerHTML ='no info';
+            window.removeEventListener('scroll', handleScroll);
+        }       
+        canFetchAttractions = true;
+    });
+}*/
 
 function getKeyword(evt){
     //canFetchAttractions = false;
@@ -121,8 +154,9 @@ function getKeyword(evt){
     .then(res => res.json())
     .then(({data, nextPage}) =>{
         const fragment = document.createDocumentFragment();
-        if (nextPage){
-        data.forEach(({images, name, mrt, category}) => {
+        if (data){
+            window.removeEventListener('scroll', handleScroll);
+            data.forEach(({images, name, mrt, category}) => {
             let twelve = document.createElement("div");
             twelve.className = "twelve";
             twelve.appendChild(createAttractionImg(images));
@@ -142,6 +176,9 @@ function getKeyword(evt){
         canFetchAttractions = true;
     });
 }
+
+
+
 //attractionContainer.innerHTML = "無此資料";
 // 主程式
 const API_BASE_URL = "http://127.0.0.1:3000/api/attractions";
