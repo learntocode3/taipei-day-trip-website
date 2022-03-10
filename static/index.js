@@ -153,7 +153,7 @@ function getKeyword(evt){
     
    
     attractionContainer.innerHTML ='';
-    fetch(`http://127.0.0.1:3000/api/attractions?page=0&keyword=${search.value}`)
+    fetch(`http://52.87.119.150:3000/api/attractions?page=0&keyword=${search.value}`)
     .then(res => res.json())
     .then(({data, nextPage}) =>{
         const fragment = document.createDocumentFragment();
@@ -187,7 +187,7 @@ function getKeyword(evt){
 
 //attractionContainer.innerHTML = "無此資料";
 // 主程式
-const API_BASE_URL = "http://127.0.0.1:3000/api/attractions";        
+const API_BASE_URL = "http://52.87.119.150:3000/api/attractions";        
 let PAGE_SIZE = 0;
 let keyword = '';
 let canFetchAttractions = true; 
