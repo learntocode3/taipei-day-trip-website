@@ -4,7 +4,7 @@
     justify-content: center;
 }
 .frame{
-    width:1200px;
+    width:1180px;
     display:flex;   /*horizontal display*/
 }
 .left{
@@ -27,6 +27,8 @@
     font-weight: normal;
     font-size: 16px;
     color: #666666;
+
+    
 }
 .item{
     margin: 10px;
@@ -48,53 +50,36 @@
     position: relative;
     justify-content: center;
     
-    
-    
-    
 }
 
-.welcomeleft{
-    flex: none;
-        
+.welcomeleft{  
+    flex: none;  /*這個配置是固定的*/
+    width: 500px;    
     height: 169px;
-    width: 1200px;
-    padding: 106px ;
+    padding-top: 106px ;
+    padding-bottom: 106px;
     margin-left: 1px;
-
     z-index: 1;
- 
        
 }
 
-.rr{
-    display:flex;
-    justify-content: flex-end;  /*水平靠右對齊*/
-    flex: auto;
-}
-
-.welcomeRight{
-    position: absolute;
-    flex: none;
-    max-width: 650px;
-    left: 60%;
-    bottom: 0;
-
-}
-
 .text1{
-    width: 400px;
+    width: 100%;
     text-align:left;
+    display: inline-block;
+    float: left;
     
     font-size: 28px;
     font-family: Noto Sans TC;
     font-style: normal;
     font-weight: bold;
     color: #F8F8F8;
+    
 
     
 }
 .text2{
-    width: 400px;
+    width: 320px;
     text-align:left;
     margin-top: 15px;
     margin-bottom: 25px;
@@ -105,8 +90,6 @@
     font-weight: normal;
     color: #F8F8F8;
 }
-
-
 
 .form{
     display: flex;
@@ -125,6 +108,25 @@
     border: 0;
     background: #448899;
 }
+
+
+.rr{
+    display:flex;
+    justify-content: flex-end;  /*水平靠右對齊*/
+    flex: auto;     /*自動填滿*/
+    width: 30px;   
+   
+}
+
+.welcomeRight{
+    position: absolute;
+    max-width: 100%;
+    right:8%;   
+    bottom: 0;
+
+}
+
+
 
 .bigContainer{
     display:flex;             /*容器*/
@@ -208,6 +210,7 @@
         width: 320px;
     }
     .twelve{width: 45%;}
+
     .search{
         width: 230px;
     }
