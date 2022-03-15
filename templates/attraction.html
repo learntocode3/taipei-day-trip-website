@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type="text/css" href="../static/index.css">
+    <link rel= "stylesheet" type="text/css" href="../static/sign.css">
+    <link rel= "stylesheet" type="text/css" href="../static/attraction.css">
+    <script defer src="../static/sign.js"></script>
+    <title>台北一日遊</title>
+</head>
+<body style="margin: 0;">
+    <div class="top">
+        <div class = "frame">
+            <div class = "left"> 台北一日遊</div>
+            <div class = "right">
+                <button class = "item">預定行程</button>
+                <button data-modal-target="#modal" class = "item">登入/註冊</button>
+            </div>           
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">登入會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <input type="text" placeholder="輸入電子信箱" required>
+                <input type="text" placeholder="輸入密碼" required><br>
+                <button>登入帳戶</button>
+            </form>
+            <div>還沒有帳戶？點此註冊</div>
+        </div>      
+    </div>
+    <div id="overlay"></div>
+
+    <div class="product">
+        <div class="bookingContainer">
+            <section aria-label="Newest Photos">
+                <div class="carousel" data-carousel>
+                    <div class="button">
+                        <div><button class="carousel-button prev" data-carousel-button="prev" ><img src="../static/btn_leftArrow.png" /></button></div>
+                        <div><button class="carousel-button next" data-carousel-button="next"><img src="../static/btn_rightArrow.png" /></button></div>
+                    </div>
+                    <ul id="slider" data-slides></ul>
+                </div>
+            </section>
+            <div class="bookingForm">
+                <div class="">
+                    <div class="name" id="name"></div>
+                    <div class="categoryMrt" id="categoryMrt"></div>
+                </div>
+                <div class="booking">
+                    <div class="text-1">訂購導覽行程</div>
+                    <div class="text-2">一次景點為一日中心的一日行程</div>
+                    <div class="text-3"><label>選擇日期:<input type="date" name="date" required></label></div>
+                    <div class="text-4"><label>選擇時間:</label>
+                        
+                        <input type="radio" name="time" value="morning">
+                        <label for="morning">上半天</label required>
+                        
+                        <input type="radio" name="time" value="afternoon">
+                        <label for="afternoon">下半天</label required>
+
+                    </div>
+                    <div class="text-5">導覽費用： <span>新台幣 <span id="price">2000</span> 元</span></div>
+                    <button class="text-6">開始預定行程</button>             
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="infoContain">
+    <div class="productInfo">
+        <div id="info" class="info"></div>
+        <div class="address">景點地址：<div id="address"></div></div>
+        <div class="transportation">交通方式：<div id="transport"></div></div>  
+    </div>
+</div>
+<script src="../static/attraction.js"></script>
+
+
+</body>
+</html>

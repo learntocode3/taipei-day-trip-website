@@ -1,0 +1,248 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0;
+  }
+
+.product{
+    display: flex;
+    justify-content: center;
+    
+}
+.bookingContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    
+}
+/* 輪播 */
+
+.carousel {
+    width: 600px;
+    height: 450px; 
+    position: relative;
+    
+  }
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }  
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+  
+
+.slide > img {
+    
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+  
+.slide[data-active] {
+    opacity: 1;
+  }
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+/*.carousel-button.prev {
+    margin-top: 140px;
+  }
+  
+.carousel-button.next {
+    margin-top: 140px;
+  }*/
+.button{
+    height: 100%; 
+    width: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bookingForm{
+    margin-left: 30px;
+}
+.name{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #666666;
+}
+.categoryMrt{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+}
+
+
+/* 訂購導覽行程 */
+.booking{
+    width:500px;
+    height:300px;
+    background: #E8E8E8;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.text-1{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+
+.text-2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+
+}
+
+.text-3{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666; 
+}
+.text-4{
+    margin-top: 24px;
+    margin-bottom: 15px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+
+input[name='time']{
+    accent-color: #448899;
+}
+
+.text-5{
+    margin-bottom: 35px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+.text-6{
+    width:150px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    color: #FFFFFF;
+    background: #448899;
+    border-radius: 5px;
+}
+
+
+/* 景點詳細資料 */
+
+.infoContain{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    
+
+}
+
+.productInfo{
+    width: 1200px;
+    
+}
+
+.info{
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+
+}
+
+
+.address{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+    
+}
+
+.address > div{
+    font-weight: 400;
+}
+
+.transportation{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+    
+}
+.transportation > div{
+    font-weight: 400;
+}
+
+
+
+@media(max-width:1200px){
+    .bookingContainer{
+        width: 90%;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width:600px){
+    .bookingContainer{
+        width:90%;
+    }
+    .carousel{
+        width: 350px;
+        height: 300px;
+    }
+    .bookingForm{
+        width: 350px;
+    }
+    .booking{
+        width: 300px;
+    }
+    .button{
+        width: 300px;
+        height: 262px;
+    }
+}

@@ -1,19 +1,25 @@
+// 主程式
+const API_BASE_URL = "http://52.87.119.150:3000/api/attractions";        
+let PAGE_SIZE = 0;
+let keyword = '';
+let canFetchAttractions = true; 
+
+const attractionContainer = document.getElementById('attractions');
+window.addEventListener('scroll', handleScroll);
+
+fetchAndAppendAttractions();
+//---------------------------------------------------------------------------------
+
 function handleScroll(){
     if (!canFetchAttractions) return;
-    
     const bottomSpaceLeftToScroll = (
         document.documentElement.scrollHeight - window.innerHeight
-        /*
-        window.scrollHeight -
-        window.scrollTop - 
-        window.clientHeight*/
     );
     const scrolled = window.scrollY;
 
     if (bottomSpaceLeftToScroll > scrolled) return;
     PAGE_SIZE ++;
-    fetchAndAppendAttractions();
-    
+    fetchAndAppendAttractions();   
 }
 
 function createAttractionsUrl(){
@@ -32,45 +38,37 @@ function fetchAndAppendAttractions(){
     fetch(url)
     .then(res => res.json())
     .then(({data, nextPage}) =>{
-        //console.log(data.images)
-        const fragment = document.createDocumentFragment();
-        //const test = document.createElement('div');
-        
-        
-        
+        const fragment = document.createDocumentFragment(); 
         if (data){
-        
-        data.forEach(({images, name, mrt, category}) => {
-            let twelve = document.createElement("div");
-            twelve.className = "twelve";
-            twelve.appendChild(createAttractionImg(images));
-            twelve.appendChild(createAttractionText(name));
-            let mrtCat = document.createElement('div')
-            mrtCat.className = 'mrtCat';
-            mrtCat.appendChild(createAttractionMrt(mrt));
-            mrtCat.appendChild(createAttractionCategory(category));
-            twelve.appendChild(mrtCat)
+            data.forEach(({images, name, mrt, category, id}) => {
+                let twelve = document.createElement("div");
+                let link = document.createElement('a');
+                link.setAttribute("href",`http://52.87.119.150:3000/attraction/${id}`);
+                link.className = "link";
+                //console.log(`http://127.0.0.1:3000/attraction/${id}`)
+                twelve.className = "twelve";
 
-            //twelve.appendChild(createAttractionMrt(mrt));
-            //twelve.appendChild(createAttractionCategory(category));
-            fragment.appendChild(twelve)
+
+               
+
+                link.appendChild(createAttractionImg(images));
+                link.appendChild(createAttractionText(name));
+
+                let mrtCat = document.createElement('div')
+                mrtCat.className = 'mrtCat';
+                mrtCat.appendChild(createAttractionMrt(mrt));
+                mrtCat.appendChild(createAttractionCategory(category));
+
+                link.appendChild(mrtCat);
+                twelve.appendChild(link);
+
+                fragment.appendChild(twelve)
             });
-
-        //data.forEach(({name}) => {
-            //  fragment.appendChild(createAttractionText(name));
-        //});
-
-        attractionContainer.appendChild(fragment);
-
-            //PAGE_SIZE ++;
+            attractionContainer.appendChild(fragment);
         } else {
             window.removeEventListener('scroll', handleScroll);
-        }
-        
+        }      
         canFetchAttractions = true;
-
-
-
     });
 }
 
@@ -153,7 +151,7 @@ function getKeyword(evt){
     
    
     attractionContainer.innerHTML ='';
-    fetch(`http://52.87.119.150:3000/api/attractions?page=0&keyword=${search.value}`)
+    fetch(`${API_BASE_URL}?page=0&keyword=${search.value}`)
     .then(res => res.json())
     .then(({data, nextPage}) =>{
         const fragment = document.createDocumentFragment();
@@ -185,15 +183,3 @@ function getKeyword(evt){
 
 
 
-//attractionContainer.innerHTML = "無此資料";
-// 主程式
-const API_BASE_URL = "http://52.87.119.150:3000/api/attractions";        
-let PAGE_SIZE = 0;
-let keyword = '';
-let canFetchAttractions = true; 
-
-const attractionContainer = document.getElementById('attractions');
-window.addEventListener('scroll', handleScroll);
-
-fetchAndAppendAttractions();
-//fetchAndAppendAttractions();

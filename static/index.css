@@ -32,6 +32,11 @@
 }
 .item{
     margin: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    color: #666666;
 }
 
 .middle{
@@ -46,7 +51,6 @@
 .slogan{
     width: 1180px;
     display:flex;
-
     position: relative;
     justify-content: center;
     
@@ -59,8 +63,7 @@
     padding-top: 106px ;
     padding-bottom: 106px;
     margin-left: 1px;
-    z-index: 1;
-       
+    z-index: 1;  
 }
 
 .text1{
@@ -103,7 +106,7 @@
 
 }
 .littleSearchIcon{    
-    min-height: 52px;
+    min-height: 46px;
     min-width: 60px;
     border: 0;
     background: #448899;
@@ -126,8 +129,6 @@
 
 }
 
-
-
 .bigContainer{
     display:flex;             /*容器*/
     flex-wrap: wrap;         /*此指令可以使圖從4行慢慢壓縮成2行*/
@@ -144,6 +145,10 @@
     margin-right: 13px;
     margin-bottom: 30px;
     border: 1px solid #E8E8E8;
+    cursor: pointer;
+}
+.link{
+    text-decoration: none;
 }
 
 .attractions{
@@ -203,13 +208,16 @@
     .welcomeRight{
         position: absolute;
         left: 43%;
-        width:50%;
-        
+        width:50%;     
     }
+
     .welcomeleft{
         width: 320px;
     }
-    .twelve{width: 45%;}
+
+    .twelve{
+        width: 45%;
+    }
 
     .search{
         width: 230px;
