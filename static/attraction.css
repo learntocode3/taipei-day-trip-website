@@ -278,4 +278,7 @@ input[name='time']{
         width: 300px;
         height: 262px;
     }
+    #dotContain{
+        bottom: 32px;
+    }
 }
