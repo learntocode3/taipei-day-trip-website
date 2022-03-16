@@ -72,7 +72,29 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+/* 點點～ */
+#dotContain {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.dot{
+    width: 12px;
+    height: 12px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    margin: 10px;
 
+}
+.dot[data-active]{
+    background-color: black;
+}
 
 .bookingForm{
     margin-left: 30px;
