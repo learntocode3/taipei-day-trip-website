@@ -12,6 +12,7 @@ body {
     
 }
 .bookingContainer{
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     width: 1200px;
@@ -152,13 +153,16 @@ input[name='time']{
     color: #666666;
 }
 .text-6{
-    width:150px;
+    width:160px;
+    height: 43px;
+    padding: 10px 20px;
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 400;
-    font-size: 19px;
+    font-size: 17px;
     color: #FFFFFF;
     background: #448899;
+    border:none;
     border-radius: 5px;
 }
 
@@ -167,14 +171,20 @@ input[name='time']{
 
 .infoContain{
     display: flex;
-    padding: 10px;
+   
     justify-content: center;
+    margin-top: 35px;
+
+    padding: 10px;
+    
     
 
 }
 
 .productInfo{
     width: 1200px;
+    padding-top: 50px;
+    border-top: 1px solid #E8E8E8;
     
 }
 
@@ -240,6 +250,7 @@ input[name='time']{
     }
     .booking{
         width: 300px;
+        margin-right: 35px;
     }
     .button{
         width: 300px;
