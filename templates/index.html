@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel= "stylesheet" type="text/css" href="../static/index.css">
+    <link rel= "stylesheet" type="text/css" href="../static/sign.css">
+    <script defer src="../static/sign.js"></script>
     <title>台北一日遊</title>
 </head>
 <body style="margin: 0;">
@@ -12,11 +14,35 @@
         <div class = "frame">
             <div class = "left"> 台北一日遊</div>
             <div class = "right">
-                <div class = "item">預定行程</div>
-                <div class = "item">登入/註冊</div>
+                <button class = "item">預定行程</button>
+                <button data-modal-target="#modal" class = "item">登入/註冊</button>
             </div>           
         </div>
     </div>
+
+
+    
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">登入會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <input type="text" placeholder="輸入電子信箱" required>
+                <input type="text" placeholder="輸入密碼" required><br>
+                <button>登入帳戶</button>
+            </form>
+            <div>還沒有帳戶？點此註冊</div>
+        </div>      
+    </div>
+    <div id="overlay"></div>
+
+    
+
+   
+        
+    
 
 
     <div class="middle">
@@ -39,6 +65,7 @@
     <div class= "bigContainer" id="attractions"></div>
 
     <script src="../static/index.js"> </script>
+    
 
 
 </body>
