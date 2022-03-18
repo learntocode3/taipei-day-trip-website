@@ -150,6 +150,7 @@
 }
 .link{
     text-decoration: none;
+    color: inherit;
 }
 
 .attractions{

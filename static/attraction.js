@@ -1,9 +1,12 @@
-const API_BASE = "http://52.87.119.150:3000"
-    let data;
-    const id = document.URL.split("/").slice(-1)
-    //console.log(id)
-    const url = `${API_BASE}/api/attraction/` + id
-    //console.log(url)
+const BASE_URL = "http://127.0.0.1:3000";
+//const BASE_URL = "http://52.87.119.150:3000";
+
+
+let data;
+const id = document.URL.split("/").slice(-1)
+//console.log(id)
+const url = `${BASE_URL}/api/attraction/` + id
+//console.log(url)
 
 function changePrice(){
     const morning = document.querySelector('input[value="morning"]') 
@@ -53,8 +56,9 @@ fetch(url).then((response)=>{
         slider.appendChild(li);
         dotContain.appendChild(dot);
     }
-    
-    slider.appendChild(dotContain);
+    const couresel = document.querySelector(".carousel")
+    couresel.appendChild(dotContain);
+    //slider
 
     let name = document.querySelector("#name");
     name.innerHTML = data.name;
