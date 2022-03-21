@@ -22,20 +22,38 @@
 
 
     
-    <div class="modal" id="modal">
+    <div class="modal" id="modal" data-sign>
         <div class="modal-header">
             <div class="title">登入會員帳號</div>
             <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
-            <form>
+            <form class="signform">
                 <input type="text" placeholder="輸入電子信箱" required>
-                <input type="text" placeholder="輸入密碼" required><br>
+                <input type="text" placeholder="輸入密碼" required>
                 <button>登入帳戶</button>
             </form>
-            <div>還沒有帳戶？點此註冊</div>
+            <div id="signUp" data-modal-target="#modal-signup">還沒有帳戶？點此註冊</div>
         </div>      
     </div>
+    
+
+    <div class="modal-signup" id="modal-signup" data-sign>
+        <div class="modal-signup-header">
+            <div class="title">註冊會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-signup-body">
+            <form class="signform">
+                <input type="text" placeholder="輸入姓名" required>
+                <input type="text" placeholder="輸入電子信箱" required>
+                <input type="text" placeholder="輸入密碼" required>
+                <button>登入帳戶</button>
+            </form>
+            <div data-modal-target="#modal">已經有帳戶了？點此登入</div>
+        </div>      
+    </div>
+
     <div id="overlay"></div>
 
     
