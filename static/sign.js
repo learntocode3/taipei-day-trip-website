@@ -45,8 +45,7 @@ function openModal(modal) {
   }
 
 // 登入、註冊、登出
-//const signin=document.querySelector('#signin')
-//signin.addEventListener('submit', memberSignin)
+
 
 function memberSignin(){
     // 從前端拿到input資料換成json格式
@@ -58,7 +57,7 @@ function memberSignin(){
     };
 
     // 把資料裝在body發送request到後端api
-    fetch ("http://127.0.0.1:3000/api/user",{
+    fetch ("http://52.87.119.150:3000/api/user",{
         method: "PATCH",
         credentials: "include",
         body: JSON.stringify(data),
@@ -76,11 +75,12 @@ function memberSignin(){
         response.json()
     .then(function(data){
         console.log(data.ok);
-        if(data.ok === false){
-            document.getElementById("status").innerText="信箱或密碼錯誤";
+        if(data.ok === true){
+            window.location.reload();
+            //document.getElementById("status").innerText="信箱或密碼錯誤";
         } else {
             //document.getElementById("status").innerText="success";
-            window.location.reload();
+            document.getElementById("status").innerText=data.message;
         }
     })
  })
@@ -98,7 +98,7 @@ function memberSignUp(){
     };
 
     // 把資料裝在body發送request到後端api
-    fetch ("http://127.0.0.1:3000/api/user",{
+    fetch ("http://52.87.119.150:3000/api/user",{
         method: "POST",
         credentials: "include",
         body: JSON.stringify(data),
@@ -130,7 +130,7 @@ function memberSignUp(){
 function statusCheck(){
     const signinBtn=document.getElementById('login')
     const logoutBtn=document.getElementById('logout')
-    fetch ("http://127.0.0.1:3000/api/user")
+    fetch ("http://52.87.119.150:3000/api/user")
     .then(res => res.json())
     .then(function(data){
         console.log(data.data)
@@ -145,7 +145,7 @@ function statusCheck(){
 }
 
 function logout(){
-    fetch ("http://127.0.0.1:3000/api/user", {method:"DELETE"});
+    fetch ("http://52.87.119.150:3000/api/user", {method:"DELETE"});
     window.location.reload();
 }
 

@@ -120,7 +120,7 @@ def signin():
         session['name'] = member[1]
         return {"ok":True}
     else:
-        return {"ok":False}
+        return {"error": True, "message": "信箱或密碼錯誤"}
     
 
 @userAPI.route("/api/user", methods=["DELETE"])
