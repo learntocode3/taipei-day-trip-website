@@ -77,9 +77,9 @@ function memberSignin(){
     .then(function(data){
         console.log(data.ok);
         if(data.ok === false){
-            document.getElementById("status").innerText="fail";
+            document.getElementById("status").innerText="信箱或密碼錯誤";
         } else {
-            document.getElementById("status").innerText="success";
+            //document.getElementById("status").innerText="success";
             window.location.reload();
         }
     })
@@ -119,9 +119,36 @@ function memberSignUp(){
         if(data.error === true){
             document.getElementById("status-2").innerText=data.message;
         } else {
-            document.getElementById("status-2").innerText="success";
+            document.getElementById("status-2").innerText="註冊成功";
             //window.location.reload();
         }
     })
  })
 }
+
+
+function statusCheck(){
+    const signinBtn=document.getElementById('login')
+    const logoutBtn=document.getElementById('logout')
+    fetch ("http://127.0.0.1:3000/api/user")
+    .then(res => res.json())
+    .then(function(data){
+        console.log(data.data)
+        if (data.data != null){
+            logoutBtn.classList.add('active');
+            signinBtn.classList.remove('active');
+        } else {
+            logoutBtn.classList.remove('active');
+            signinBtn.classList.add('active');
+        }
+    })
+}
+
+function logout(){
+    fetch ("http://127.0.0.1:3000/api/user", {method:"DELETE"});
+    window.location.reload();
+}
+
+
+
+statusCheck();

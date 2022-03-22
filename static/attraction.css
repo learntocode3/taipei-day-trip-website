@@ -72,6 +72,15 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
+.btn-prev{
+    opacity: 0.5;
+}
+.btn-next{
+    opacity: 0.5;
+}
+
+
 /* 點點～ */
 #dotContain {
     position: absolute;
@@ -163,9 +172,27 @@ body {
 }
 
 input[name='time']{
-
-    accent-color: #448899;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+  
+    border: 3px solid #FFFFFF;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+    background-color: #FFFFFF;
 }
+input:checked {
+    background-color: #448899;;
+  }
+
 
 .text-5{
     margin-bottom: 35px;

@@ -176,7 +176,7 @@
     z-index: 10;
     background-color: white;
     width: 340px;
-    height: 350px;
+    height: 360px;
 }
 
 .modal-signup.active{
@@ -227,4 +227,12 @@
   font-size: 16px;
   color: #666666;
   cursor: pointer;
+}
+
+
+#status{
+  color:red;
+}
+#status-2{
+  color:red;
 }

@@ -31,7 +31,8 @@
 
     
 }
-.item{
+
+.right > button{
     margin: 10px;
     cursor: pointer;
     border: none;
@@ -39,6 +40,24 @@
     background: none;
     color: #666666;
 }
+
+.signin-btn{
+    display: none;
+}
+.signin-btn.active{
+    display: inline-block;
+}
+.logout-btn{
+    display: none;
+}
+.logout-btn.active{
+    display: inline-block;
+}
+
+
+
+
+
 
 .middle{
     position:relative;

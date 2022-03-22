@@ -86,11 +86,13 @@ def db_addNewMember(name, email, password):
 userAPI = Blueprint("user api", __name__)
 
 
-# @userAPI.route("/api/user", methods=["GET"])
-# def getUserInfo():
-#     if "name" in session:
-#         data = db_getUserInfo(session['name'])
-#         return data
+@userAPI.route("/api/user", methods=["GET"])
+def checkUserStatus():
+    if "name" in session:
+        data = db_getUserInfo(session['name'])
+        return data
+    return {"data": None}
+
 
 @userAPI.route("/api/user", methods=["POST"])
 def signup():
@@ -104,7 +106,7 @@ def signup():
     if user:
         return {
                 "error": True,
-                "message":"email already exist"
+                "message":"信箱已經被註冊"
         }      
     else:
         db_addNewMember(req['name'], req['email'], req['password'])
@@ -124,4 +126,4 @@ def signin():
 @userAPI.route("/api/user", methods=["DELETE"])
 def signout():
     session.pop('name', None)
-    return redirect('/')
+    return {"ok":True}
