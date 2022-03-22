@@ -28,11 +28,12 @@
             <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
-            <form class="signform">
-                <input type="text" placeholder="輸入電子信箱" required>
-                <input type="text" placeholder="輸入密碼" required>
-                <button>登入帳戶</button>
+            <form class="signform" id="signin">
+                <input type="text" name="email" id="email-1" placeholder="輸入電子信箱" required>
+                <input type="text" name="password" id="password-1" placeholder="輸入密碼" required>
+                <button onclick="memberSignin();return false;">登入帳戶</button>
             </form>
+            <div id="status"></div>
             <div id="signUp" data-modal-target="#modal-signup">還沒有帳戶？點此註冊</div>
         </div>      
     </div>
@@ -44,13 +45,15 @@
             <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-signup-body">
-            <form class="signform">
-                <input type="text" placeholder="輸入姓名" required>
-                <input type="text" placeholder="輸入電子信箱" required>
-                <input type="text" placeholder="輸入密碼" required>
-                <button>登入帳戶</button>
+            <form class="signform" id="signup">
+                <input type="text" name="name" id="name-2" placeholder="輸入姓名" required>
+                <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
+                <input type="text" name="password" id="password-2" placeholder="輸入密碼" required>
+                <button onclick="memberSignUp();return false;">註冊帳戶</button>
             </form>
+            <div id="status-2"></div>
             <div data-modal-target="#modal">已經有帳戶了？點此登入</div>
+            
         </div>      
     </div>
 
@@ -59,8 +62,6 @@
     
 
    
-        
-    
 
 
     <div class="middle">
