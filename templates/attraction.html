@@ -13,28 +13,52 @@
 <body style="margin: 0;">
     <div class="top">
         <div class = "frame">
-            <div class = "left"> 台北一日遊</div>
+            <div class = "left"><a href="/" class="link">台北一日遊</a></div>
             <div class = "right">
-                <button class = "item">預定行程</button>
-                <button data-modal-target="#modal" class = "item">登入/註冊</button>
+                <button class = "booking-btn">預定行程</button>
+                <button data-modal-target="#modal" class = "signin-btn" id="login">登入/註冊</button>
+                <button id="logout" class="logout-btn" onclick="logout()">登出系統</button>
             </div>           
         </div>
     </div>
 
-    <div class="modal" id="modal">
+
+    
+    <div class="modal" id="modal" data-sign>
         <div class="modal-header">
             <div class="title">登入會員帳號</div>
             <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
-            <form>
-                <input type="text" placeholder="輸入電子信箱" required>
-                <input type="text" placeholder="輸入密碼" required><br>
-                <button>登入帳戶</button>
+            <form class="signform" id="signin">
+                <input type="text" name="email" id="email-1" placeholder="輸入電子信箱" required>
+                <input type="password" name="password" id="password-1" placeholder="輸入密碼" required>
+                <button onclick="memberSignin();return false;">登入帳戶</button>
             </form>
-            <div>還沒有帳戶？點此註冊</div>
+            <div id="status"></div>
+            <div id="signUp" data-modal-target="#modal-signup">還沒有帳戶？點此註冊</div>
         </div>      
     </div>
+    
+
+    <div class="modal-signup" id="modal-signup" data-sign>
+        <div class="modal-signup-header">
+            <div class="title">註冊會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-signup-body">
+            <form class="signform" id="signup">
+                <input type="text" name="name" id="name-2" placeholder="輸入姓名" required>
+                <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
+                <input type="password" name="password" id="password-2" placeholder="輸入密碼" required>
+                <button onclick="memberSignUp();return false;">註冊帳戶</button>
+            </form>
+            <div id="status-2"></div>
+            <div data-modal-target="#modal">已經有帳戶了？點此登入</div>
+            
+        </div>      
+    </div>
+
     <div id="overlay"></div>
 
     <div class="product">
@@ -42,8 +66,8 @@
             <section aria-label="Newest Photos">
                 <div class="carousel" data-carousel>
                     <div class="button">
-                        <div><button class="carousel-button prev" data-carousel-button="prev" ><img src="../static/btn_leftArrow.png" /></button></div>
-                        <div><button class="carousel-button next" data-carousel-button="next"><img src="../static/btn_rightArrow.png" /></button></div>
+                        <div><button class="carousel-button prev" data-carousel-button="prev" ><img src="../static/btn_leftArrow.png" class="btn-prev"/></button></div>
+                        <div><button class="carousel-button next" data-carousel-button="next"><img src="../static/btn_rightArrow.png" class="btn-next"/></button></div>
                     </div>
                     <ul id="slider" data-slides></ul>
                 </div>

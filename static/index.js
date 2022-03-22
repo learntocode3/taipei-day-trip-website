@@ -1,5 +1,8 @@
 // 主程式
-const API_BASE_URL = "http://52.87.119.150:3000/api/attractions";        
+//const BASE_URL = "http://127.0.0.1:3000"
+const BASE_URL = "http://52.87.119.150:3000"
+const API_BASE_URL = `${BASE_URL}/api/attractions`;        
+
 let PAGE_SIZE = 0;
 let keyword = '';
 let canFetchAttractions = true; 
@@ -43,7 +46,7 @@ function fetchAndAppendAttractions(){
             data.forEach(({images, name, mrt, category, id}) => {
                 let twelve = document.createElement("div");
                 let link = document.createElement('a');
-                link.setAttribute("href",`http://52.87.119.150:3000/attraction/${id}`);
+                link.setAttribute("href",`${BASE_URL}/attraction/${id}`);
                 link.className = "link";
                 //console.log(`http://127.0.0.1:3000/attraction/${id}`)
                 twelve.className = "twelve";
