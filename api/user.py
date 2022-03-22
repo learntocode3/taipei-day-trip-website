@@ -12,7 +12,6 @@ from mysql.connector import pooling
 
 #----------------------------------------------------------------
 dbconfig = {
-
     'user':'abc',
     'database':'taipeiTrip',
     'password':'12345678',
