@@ -82,6 +82,8 @@ def db_addNewMember(name, email, password):
     cursor.close()
     cnx.close()
 
+
+
 #-----------------------------------------------------------------
 userAPI = Blueprint("user api", __name__)
 

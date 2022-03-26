@@ -1,6 +1,6 @@
 // 主程式
-//const BASE_URL = "http://127.0.0.1:3000"
-const BASE_URL = "http://52.87.119.150:3000"
+const BASE_URL = "http://127.0.0.1:3000"
+//const BASE_URL = "http://52.87.119.150:3000"
 const API_BASE_URL = `${BASE_URL}/api/attractions`;        
 
 let PAGE_SIZE = 0;
@@ -50,9 +50,6 @@ function fetchAndAppendAttractions(){
                 link.className = "link";
                 //console.log(`http://127.0.0.1:3000/attraction/${id}`)
                 twelve.className = "twelve";
-
-
-               
 
                 link.appendChild(createAttractionImg(images));
                 link.appendChild(createAttractionText(name));
@@ -105,48 +102,7 @@ function createAttractionCategory(category){
 }
 
 
-
-
-
-/*
-function getKeyword(){
-    let search = document.getElementById("abc")
-    //console.log(search.value)
-    
-    attractionContainer.innerHTML ='';
-    window.removeEventListener('scroll', handleScroll);
-    fetch(API_BASE_URL+`?page=0&keyword=${search.value}`)
-    .then(res => res.json())
-    .then(({data, nextPage}) =>{
-        const fragment = document.createDocumentFragment();
-        if (nextPage){
-            data.forEach(({images, name, mrt, category}) => {
-            let twelve = document.createElement("div");
-            twelve.className = "twelve";
-            twelve.appendChild(createAttractionImg(images));
-            twelve.appendChild(createAttractionText(name));
-            let mrtCat = document.createElement('div')
-            mrtCat.className = 'mrtCat';
-            mrtCat.appendChild(createAttractionMrt(mrt));
-            mrtCat.appendChild(createAttractionCategory(category));
-            twelve.appendChild(mrtCat)
-            fragment.appendChild(twelve)
-            });
-
-        attractionContainer.appendChild(fragment);
-        } else {
-            //attractionContainer.innerHTML ='no info';
-            window.removeEventListener('scroll', handleScroll);
-        }       
-        canFetchAttractions = true;
-    });
-}*/
-
 function getKeyword(evt){
-    //canFetchAttractions = false;
-    //let search = document.getElementById('abc')
-    //console.log(search.value)
-    
 
     let search = document.getElementById("abc")
     console.log(search.value)
@@ -186,3 +142,4 @@ function getKeyword(evt){
 
 
 
+document.querySelector

@@ -57,7 +57,7 @@ function memberSignin(){
     };
 
     // 把資料裝在body發送request到後端api
-    fetch ("http://52.87.119.150:3000/api/user",{
+    fetch (userAPI,{
         method: "PATCH",
         credentials: "include",
         body: JSON.stringify(data),
@@ -98,7 +98,7 @@ function memberSignUp(){
     };
 
     // 把資料裝在body發送request到後端api
-    fetch ("http://52.87.119.150:3000/api/user",{
+    fetch (userAPI,{
         method: "POST",
         credentials: "include",
         body: JSON.stringify(data),
@@ -130,7 +130,7 @@ function memberSignUp(){
 function statusCheck(){
     const signinBtn=document.getElementById('login')
     const logoutBtn=document.getElementById('logout')
-    fetch ("http://52.87.119.150:3000/api/user")
+    fetch(userAPI)
     .then(res => res.json())
     .then(function(data){
         console.log(data.data)
@@ -145,10 +145,11 @@ function statusCheck(){
 }
 
 function logout(){
-    fetch ("http://52.87.119.150:3000/api/user", {method:"DELETE"});
+    fetch (userAPI, {method:"DELETE"});
     window.location.reload();
 }
 
-
+// 因為defer BASE_URL 已經宣告過了
+const userAPI= `${BASE_URL}/api/user`;
 
 statusCheck();
