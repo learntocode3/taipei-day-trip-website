@@ -15,7 +15,7 @@
         <div class = "frame">
             <div class = "left"><a href="/" class="link">台北一日遊</a></div>
             <div class = "right">
-                <button class = "booking-btn">預定行程</button>
+                <button class = "booking-btn" id="booking" onclick="bookingTop()">預定行程</button>
                 <button data-modal-target="#modal" class = "signin-btn" id="login">登入/註冊</button>
                 <button id="logout" class="logout-btn" onclick="logout()">登出系統</button>
             </div>           
@@ -91,7 +91,7 @@
 
                     </div>
                     <div class="text-5">導覽費用： <span>新台幣 <span id="price">2000</span> 元</span></div>
-                    <button class="text-6">開始預定行程</button>             
+                    <button class="text-6" onclick="booking();return false;">開始預定行程</button>             
                 </div>
             </div>
         </div>

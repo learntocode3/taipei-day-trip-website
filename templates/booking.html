@@ -14,7 +14,7 @@
         <div class = "frame">
             <div class = "left"><a href="/" class="link">台北一日遊</a></div>
             <div class = "right">
-                <button class = "booking-btn">預定行程</button>
+                <button class = "booking-btn" id="booking" onclick="bookingTop()">預定行程</button>
                 <button data-modal-target="#modal" class = "signin-btn" id="login">登入/註冊</button>
                 <button id="logout" class="logout-btn" onclick="logout()">登出系統</button>
             </div>           
@@ -60,26 +60,25 @@
 
     <div id="overlay"></div>
 
-    <div>您好，<span>XXX</span>,待預定的行程如下：</div>
+    <div>您好，<span id="greetName"></span>,待預定的行程如下：</div>
     <div>
-        <div>圖片</div>
+        <div id="bookingPic"></div>
         <div>
-            <div>日期：</div>
-            <div>時間：</div>
-            <div>費用：</div>
-            <div>地點：</div>
+            <div id="bookingDate">日期：</div>
+            <div id="bookingTime">時間：</div>
+            <div id="bookingFee">費用：</div>
+            <div id="bookingPlace">地點：</div>
         </div>       
     </div>
 
     <div>您的聯絡資訊</div>
     <form >
-        <input type="text" name="name" placeholder="輸入姓名" required>
-        <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
-        <input type="password" name="password" id="password-2" placeholder="輸入密碼" required>
-        <button onclick="memberSignUp();return false;">註冊帳戶</button>
+        <label>聯絡電話：</label><input type="text" placeholder="輸入姓名" required>
+        <label>聯絡信箱：</label><input type="text" placeholder="輸入電子信箱" required>
+        <label>手機號碼：</label><input type="text"  placeholder="輸入手機" required>
     </form>
     <div>請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
 
-
+    <script src="../static/javascript/booking.js"></script>
 </body>
 </html>

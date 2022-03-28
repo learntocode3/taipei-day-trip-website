@@ -134,6 +134,7 @@ function statusCheck(){
     .then(res => res.json())
     .then(function(data){
         console.log(data.data)
+        
         if (data.data != null){
             logoutBtn.classList.add('active');
             signinBtn.classList.remove('active');
@@ -141,12 +142,28 @@ function statusCheck(){
             logoutBtn.classList.remove('active');
             signinBtn.classList.add('active');
         }
+        document.querySelector("#greetName").innerHTML = data.data.name;
     })
 }
 
 function logout(){
     fetch (userAPI, {method:"DELETE"});
     window.location.reload();
+}
+
+
+
+
+function bookingTop(){
+    fetch(userAPI)
+    .then(res => res.json())
+    .then(function(data){
+        if (data.data != null){
+            location.replace("http://127.0.0.1:3000/booking")
+        } else {
+            document.getElementById("login").click();
+        }
+    })
 }
 
 // 因為defer BASE_URL 已經宣告過了
