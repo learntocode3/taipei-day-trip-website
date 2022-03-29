@@ -47,7 +47,7 @@ function getBookingInfo(){
     
             let bookingPlace = document.querySelector("#bookingPlace");
             bookPlace=document.createElement('span');
-            bookPlace.innerText = data.data.attraction.name;
+            bookPlace.innerText = data.data.attraction.address;
             bookingPlace.appendChild(bookPlace)
     
         }
