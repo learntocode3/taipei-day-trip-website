@@ -15,7 +15,7 @@ dbconfig = {
 }
 
 cnxpool = mysql.connector.pooling.MySQLConnectionPool(pool_name = "mypool",
-                                                      pool_size = 3,
+                                                      pool_size = 10,
                                                       **dbconfig)
 
 def db_getInfoByID(id):
