@@ -152,6 +152,6 @@
         width: 330px;
     }
     footer{
-        position:relative;
+        position: fixed;
     }
 }
