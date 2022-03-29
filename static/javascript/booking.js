@@ -13,7 +13,11 @@ function getBookingInfo(){
         let bookingPic = document.getElementById("bookingPic");
         let bookingImage = document.createElement('img');
         bookingImage.src = data.data.attraction.image;
+        bookingImage.classList.add('bookImg'); 
         bookingPic.appendChild(bookingImage)
+
+        let attractionName = document.querySelector("#attractionName");
+        attractionName.innerText = data.data.attraction.name;
 
         let bookingDate = document.querySelector("#bookingDate");
         bookDate=document.createElement('span');
@@ -39,4 +43,19 @@ function getBookingInfo(){
     })
 }
 
+function getUser(){
+    const signinBtn=document.getElementById('login')
+    const logoutBtn=document.getElementById('logout')
+    fetch(userAPI_url)
+    .then(res => res.json())
+    .then(function(data){
+        if(data.data != null){
+            document.getElementById('greetName').innerText = data.data.name
+        } else {
+            location.replace("http://127.0.0.1:3000/")
+        }       
+    })
+}
+
+getUser();
 getBookingInfo();

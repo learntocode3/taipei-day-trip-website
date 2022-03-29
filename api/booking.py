@@ -47,7 +47,7 @@ def db_getUserIdBySession(name):
 
 def db_getBookingInfoByUserId(id):
     cnx = cnxpool.get_connection()
-    cursor = cnx.cursor()
+    cursor = cnx.cursor(buffered=True)
     query = ("SELECT * FROM booking WHERE booking.user_id = %s order by ordertime DESC")
     data_query=(id,)
     cursor.execute(query, data_query)
@@ -57,6 +57,8 @@ def db_getBookingInfoByUserId(id):
     if user:
         return user
 
+# a = db_getBookingInfoByUserId(3)
+# print(a)
 
 def db_getAttractionDataById(id):
     cnx = cnxpool.get_connection()

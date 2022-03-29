@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel= "stylesheet" type="text/css" href="../static/css/index.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/booking.css">
     <script defer src="../static/javascript/sign.js"></script>
     <title>台北一日遊</title>
 </head>
@@ -60,24 +61,34 @@
 
     <div id="overlay"></div>
 
-    <div>您好，<span id="greetName"></span>,待預定的行程如下：</div>
-    <div>
+<div class="containAll">
+    <div class="greetMember">您好，<span id="greetName"></span>，待預定的行程如下：</div>
+    <div class="bookingInfo">
         <div id="bookingPic"></div>
-        <div>
+        <div class="attractionTextInfo">
+            <div id="attractionName"></div>
             <div id="bookingDate">日期：</div>
             <div id="bookingTime">時間：</div>
             <div id="bookingFee">費用：</div>
             <div id="bookingPlace">地點：</div>
-        </div>       
+        </div>
+        <div class="deleteIcon"><img src="../static/image/icon_delete.png"></div>       
     </div>
 
-    <div>您的聯絡資訊</div>
-    <form >
-        <label>聯絡電話：</label><input type="text" placeholder="輸入姓名" required>
-        <label>聯絡信箱：</label><input type="text" placeholder="輸入電子信箱" required>
-        <label>手機號碼：</label><input type="text"  placeholder="輸入手機" required>
-    </form>
-    <div>請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
+    <div class="seperator"></div>
+
+    <div class="userContactInfo">
+        <div class="contactInfo-header">您的聯絡資訊</div>
+        <form class="contactForm">
+            <div class="yourName">聯絡姓名：<input class="userInputInfo" type="text" placeholder="輸入姓名" required></div>
+            <div class="yourMail">聯絡信箱：<input class="userInputInfo" type="text" placeholder="輸入電子信箱" required></div>
+            <div class="yourPhone">手機號碼：<input class="userInputInfo" type="text"  placeholder="輸入手機" required></div>
+        </form>
+        <div class="cautionInfo">請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
+    </div>
+    <div class="seperator"></div>
+
+</div>
 
     <script src="../static/javascript/booking.js"></script>
 </body>

@@ -142,7 +142,7 @@ function statusCheck(){
             logoutBtn.classList.remove('active');
             signinBtn.classList.add('active');
         }
-        document.querySelector("#greetName").innerHTML = data.data.name;
+        
     })
 }
 
