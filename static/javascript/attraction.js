@@ -9,8 +9,8 @@ const url = `${BASE_URL}/api/attraction/` + id
 //console.log(url)
 
 function changePrice(){
-    const morning = document.querySelector('input[value="morning"]') 
-    const afternoon = document.querySelector('input[value="afternoon"]')
+    const morning = document.querySelector('input[value="上半天"]') 
+    const afternoon = document.querySelector('input[value="下半天"]')
     const price = document.querySelector('#price')
 
     morning.addEventListener('click',()=>{
