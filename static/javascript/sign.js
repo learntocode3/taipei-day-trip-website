@@ -159,7 +159,7 @@ function bookingTop(){
     .then(res => res.json())
     .then(function(data){
         if (data.data != null){
-            location.replace("http://127.0.0.1:3000/booking")
+            location.replace(`${BASE_URL}/booking`)
         } else {
             document.getElementById("login").click();
         }

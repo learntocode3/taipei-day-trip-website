@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type="text/css" href="../static/css/footer.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/index.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/booking.css">
@@ -61,9 +62,9 @@
 
     <div id="overlay"></div>
 
-<div class="containAll">
+<div class="containAll" id="containAll">
     <div class="greetMember">您好，<span id="greetName"></span>，待預定的行程如下：</div>
-    <div class="bookingInfo">
+    <div class="bookingInfo" id="bookingInfo">
         <div id="bookingPic"></div>
         <div class="attractionTextInfo">
             <div id="attractionName"></div>
@@ -72,12 +73,12 @@
             <div id="bookingFee">費用：</div>
             <div id="bookingPlace">地點：</div>
         </div>
-        <div class="deleteIcon"><img src="../static/image/icon_delete.png"></div>       
+        <div class="deleteIcon"><img src="../static/image/icon_delete.png" onclick="deleteBooking();return false;"></div>       
     </div>
 
-    <div class="seperator"></div>
+    <div class="seperator" id="seperator-1"></div>
 
-    <div class="userContactInfo">
+    <div class="userContactInfo" id="userContactInfo">
         <div class="contactInfo-header">您的聯絡資訊</div>
         <form class="contactForm">
             <div class="yourName">聯絡姓名：<input class="userInputInfo" type="text" placeholder="輸入姓名" required></div>
@@ -86,9 +87,11 @@
         </form>
         <div class="cautionInfo">請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
     </div>
-    <div class="seperator"></div>
+
+    <div class="seperator" id="seperator-2"></div>
 
 </div>
+<footer><p> COPYRIGHT © 2021 台北一日遊</p></footer>
 
     <script src="../static/javascript/booking.js"></script>
 </body>

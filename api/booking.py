@@ -72,6 +72,18 @@ def db_getAttractionDataById(id):
     if data:
         return data
 
+def db_deleteBookingById(id):
+    cnx = cnxpool.get_connection()
+    cursor = cnx.cursor()
+    sql = "DELETE FROM booking WHERE booking.user_id = %s"
+    data_sql = (id, )
+    cursor.execute(sql, data_sql)
+    cnx.commit()
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!deleteDone!!!!!!!!!!!!!!!!!!!!!!!!")
+    cursor.close()
+    cnx.close()
+
+#db_deleteBookingById(2)
 
 
 #---------------------------------------------------------------------------------------------------------
@@ -87,6 +99,8 @@ def getBookingInfo():
         result = db_getBookingInfoByUserId(userID)
 
         print(result)
+        if result == None:
+            return {"data":"noData"}
         attractionData = db_getAttractionDataById(result[2])
         preBooking={"data":""}
         preBooking['data']={
@@ -103,6 +117,8 @@ def getBookingInfo():
 
         print(preBooking)
         return preBooking
+
+        
     return {"error": True, "message":"something went wrong"}
 
 
@@ -137,8 +153,11 @@ def createNewBookingInfo():
 
 
 
-
-
-    #         data = db_getBookingInfoByUserId(userID)
-    #         return data
-    # return {"error": True, "message":"something went wrong"}
+@bookingAPI.route("/api/booking", methods=["DELETE"])
+def deleteBooking():
+    if "name" in session:
+        userID = db_getUserIdBySession(session['name'])[0]
+        print("####################",userID,"####################")
+        db_deleteBookingById(userID)
+        return {"ok":True}
+    return {"error":True, "message": "User Not Login"}
