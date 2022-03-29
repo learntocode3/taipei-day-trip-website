@@ -16,7 +16,7 @@ function getBookingInfo(){
             document.body.querySelector("#seperator-1").style = "display:none";
             document.body.querySelector("#seperator-2").style = "display:none";
             document.body.querySelector("#userContactInfo").innerHTML = "";
-            document.body.querySelector("footer").style = "height: 912px;";
+            document.body.querySelector("footer").style = "height: 650px;";
             
 
 

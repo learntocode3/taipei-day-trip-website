@@ -277,6 +277,9 @@ input:checked {
     font-weight: 400;
 }
 
+footer{
+    position:relative;
+}
 
 
 @media(max-width:1200px){
