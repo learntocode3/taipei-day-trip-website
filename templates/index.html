@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" type="text/css" href="../static/index.css">
-    <link rel= "stylesheet" type="text/css" href="../static/sign.css">
-    <script defer src="../static/sign.js"></script>
+    <link rel= "stylesheet" type="text/css" href="../static/css/footer.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
+    <script defer src="../static/javascript/sign.js"></script>
     <title>台北一日遊</title>
 </head>
 <body style="margin: 0;">
@@ -14,7 +15,7 @@
         <div class = "frame">
             <div class = "left"><a href="/" class="link">台北一日遊</a></div>
             <div class = "right">
-                <button class = "booking-btn">預定行程</button>
+                <button class = "booking-btn" id="booking" onclick="bookingTop()">預定行程</button>
                 <button data-modal-target="#modal" class = "signin-btn" id="login">登入/註冊</button>
                 <button id="logout" class="logout-btn" onclick="logout()">登出系統</button>
             </div>           
@@ -73,18 +74,18 @@
                 <div class = "keywordsearch">
                     <form class="form">
                         <input  class="search" type="text" id="abc" name="abc" placeholder="輸入景點名稱查詢" required>
-                        <button class="littleSearchIcon" onclick="getKeyword();return false;" ><img src="../static/icon_search.png" /></button>
+                        <button class="littleSearchIcon" onclick="getKeyword();return false;" ><img src="../static/image/icon_search.png" /></button>
                     </form>
                 </div>
             </div>
-            <div class ="rr"><img class="welcomeRight" src="../static/welcome 1.png"></div>  
+            <div class ="rr"><img class="welcomeRight" src="../static/image/welcome 1.png"></div>  
         </div>
     </div>
 
 
     <div class= "bigContainer" id="attractions"></div>
 
-    <script src="../static/index.js"> </script>
+    <script src="../static/javascript/index.js"> </script>
     
 
 

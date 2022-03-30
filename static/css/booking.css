@@ -1,0 +1,157 @@
+.containAll{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.greetMember{
+    width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: start;
+
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    color: #666666;
+}
+
+.bookingInfo{
+    width: 1000px;
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+}
+
+.bookImg{
+    width:280px;
+    aspect-ratio: 4/3;
+}
+
+
+
+.attractionTextInfo{
+    margin-left: 20px;
+}
+
+#attractionName{
+    color: #448899;
+    margin-bottom: 25px;
+}
+
+.attractionTextInfo > div {
+    margin-bottom: 13px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+
+.attractionTextInfo > div > span {
+    font-weight: 400;
+}
+
+.deleteIcon{
+    display: flex;
+    flex: auto;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+.deleteIcon > img{
+    cursor: pointer;
+}
+
+
+.seperator{
+    width: 1200px;
+    border-top: 1px solid #E8E8E8;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.userContactInfo{
+    width:1000px
+}
+.userContactInfo > form{
+    display: inline;
+}
+
+.contactInfo-header{
+    font-weight: 700;
+    font-size: 19px;
+    color: #666666;
+
+    margin-bottom: 25px;
+}
+
+.userInputInfo{
+    border-radius: 5px;
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    text-indent: 10px;
+
+    width: 200px;
+    height: 38px;
+}
+
+.yourName{
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.yourMail{
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.yourPhone{
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.cautionInfo{
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+
+
+@media(max-width:1100px){
+    .bookingInfo{
+        width: 620px;
+    }
+    .greetMember{
+        width: 620px;
+    }
+    .userContactInfo{
+        width: 630px;
+    }
+    .seperator{
+        width: 90%;
+    }
+}
+
+@media(max-width:680px){
+    .bookingInfo{
+        width: 350px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .greetMember{
+        width: 350px;
+    }
+    .userContactInfo{
+        width: 350px;
+    }
+    .bookImg{
+        width: 330px;
+    }
+    footer{
+        position: relative;
+    }
+}

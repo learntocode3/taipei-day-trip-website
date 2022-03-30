@@ -9,8 +9,8 @@ const url = `${BASE_URL}/api/attraction/` + id
 //console.log(url)
 
 function changePrice(){
-    const morning = document.querySelector('input[value="morning"]') 
-    const afternoon = document.querySelector('input[value="afternoon"]')
+    const morning = document.querySelector('input[value="上半天"]') 
+    const afternoon = document.querySelector('input[value="下半天"]')
     const price = document.querySelector('#price')
 
     morning.addEventListener('click',()=>{
@@ -111,6 +111,48 @@ buttons.forEach(button => {
 
     })
 })
+
+function startBooking(){
+    fetch(userAPI)
+    .then(res => res.json())
+    .then(function(data){
+        if (data.data != null){
+            location.replace("booking")
+        } else {
+            document.getElementById("login").click();
+        }
+    })
+}
+
+// 透過前端取得資料送到後端放到booking的table
+function booking(){
+
+        bookingTop();
+
+        const bookingData={
+            "attractionId":id[0],
+            "date":document.querySelector('input[name="date"]').value,
+            "time":document.querySelector('input[name="time"]:checked').value,
+            "price":document.querySelector('#price').innerHTML
+        }
+        //console.log(bookingData)
+
+        fetch (`${BASE_URL}/api/booking`,{
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(bookingData),
+            cache:"no-cache",
+            headers: new Headers({
+                "content-type":"application/json"
+            })
+        })
+        .then(res => res.json())
+        .then(function(data){
+            console.log(data.ok)
+        })
+    }
+
+
 
 
 // Main

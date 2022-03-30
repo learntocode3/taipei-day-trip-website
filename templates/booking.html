@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type="text/css" href="../static/css/footer.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
+    <link rel= "stylesheet" type="text/css" href="../static/css/booking.css">
+    <script defer src="../static/javascript/sign.js"></script>
+    <title>台北一日遊</title>
+</head>
+<body style="margin: 0;">
+    <div class="top">
+        <div class = "frame">
+            <div class = "left"><a href="/" class="link">台北一日遊</a></div>
+            <div class = "right">
+                <button class = "booking-btn" id="booking" onclick="bookingTop()">預定行程</button>
+                <button data-modal-target="#modal" class = "signin-btn" id="login">登入/註冊</button>
+                <button id="logout" class="logout-btn" onclick="logout()">登出系統</button>
+            </div>           
+        </div>
+    </div>
+
+
+    
+    <div class="modal" id="modal" data-sign>
+        <div class="modal-header">
+            <div class="title">登入會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form class="signform" id="signin">
+                <input type="text" name="email" id="email-1" placeholder="輸入電子信箱" required>
+                <input type="password" name="password" id="password-1" placeholder="輸入密碼" required>
+                <button onclick="memberSignin();return false;">登入帳戶</button>
+            </form>
+            <div id="status"></div>
+            <div id="signUp" data-modal-target="#modal-signup">還沒有帳戶？點此註冊</div>
+        </div>      
+    </div>
+    
+
+    <div class="modal-signup" id="modal-signup" data-sign>
+        <div class="modal-signup-header">
+            <div class="title">註冊會員帳號</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-signup-body">
+            <form class="signform" id="signup">
+                <input type="text" name="name" id="name-2" placeholder="輸入姓名" required>
+                <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
+                <input type="password" name="password" id="password-2" placeholder="輸入密碼" required>
+                <button onclick="memberSignUp();return false;">註冊帳戶</button>
+            </form>
+            <div id="status-2"></div>
+            <div data-modal-target="#modal">已經有帳戶了？點此登入</div>
+            
+        </div>      
+    </div>
+
+    <div id="overlay"></div>
+
+<div class="containAll" id="containAll">
+    <div class="greetMember">您好，<span id="greetName"></span>，待預定的行程如下：</div>
+    <div class="bookingInfo" id="bookingInfo">
+        <div id="bookingPic"></div>
+        <div class="attractionTextInfo">
+            <div id="attractionName"></div>
+            <div id="bookingDate">日期：</div>
+            <div id="bookingTime">時間：</div>
+            <div id="bookingFee">費用：</div>
+            <div id="bookingPlace">地點：</div>
+        </div>
+        <div class="deleteIcon"><img src="../static/image/icon_delete.png" onclick="deleteBooking();return false;"></div>       
+    </div>
+
+    <div class="seperator" id="seperator-1"></div>
+
+    <div class="userContactInfo" id="userContactInfo">
+        <div class="contactInfo-header">您的聯絡資訊</div>
+        <form class="contactForm">
+            <div class="yourName">聯絡姓名：<input class="userInputInfo" type="text" placeholder="輸入姓名" required></div>
+            <div class="yourMail">聯絡信箱：<input class="userInputInfo" type="text" placeholder="輸入電子信箱" required></div>
+            <div class="yourPhone">手機號碼：<input class="userInputInfo" type="text"  placeholder="輸入手機" required></div>
+        </form>
+        <div class="cautionInfo">請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
+    </div>
+
+    <div class="seperator" id="seperator-2"></div>
+
+</div>
+<footer><p> COPYRIGHT © 2021 台北一日遊</p></footer>
+
+    <script src="../static/javascript/booking.js"></script>
+</body>
+</html>

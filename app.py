@@ -1,11 +1,17 @@
 from flask import *
 from api.attraction import attractions
 from api.user import userAPI
+from api.booking import bookingAPI
 
 app=Flask(__name__)
 app.register_blueprint(attractions)
 app.register_blueprint(userAPI)
+app.register_blueprint(bookingAPI)
+
 app.secret_key="any string but secret"
+
+
+
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.config['JSON_SORT_KEYS'] = False

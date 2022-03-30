@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    background-color: #757575;;
+    padding-top:35px;
+    padding-bottom: 35px;
+    bottom: 0;
+    text-align: center;
+    display: inline-block;
+    position: fixed;
+  }
+
+footer > p{
+    display: inline-block;
+    width: 350px;
+    text-align: center;
+    color: white;
+}
