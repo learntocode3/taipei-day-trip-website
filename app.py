@@ -2,11 +2,13 @@ from flask import *
 from api.attraction import attractions
 from api.user import userAPI
 from api.booking import bookingAPI
+from api.order import orderAPI
 
 app=Flask(__name__)
 app.register_blueprint(attractions)
 app.register_blueprint(userAPI)
 app.register_blueprint(bookingAPI)
+app.register_blueprint(orderAPI)
 
 app.secret_key="any string but secret"
 
@@ -31,7 +33,7 @@ def thankyou():
 
 # 開發
 # if __name__ == '__main__':
-#     app.run(host="127.0.0.1", port=3000, debug=True)
+#     app.run(port=3000, debug=True)
 
 # 上線
 if __name__ == '__main__':

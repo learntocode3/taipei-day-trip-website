@@ -9,6 +9,7 @@
     <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/booking.css">
     <script defer src="../static/javascript/sign.js"></script>
+   
     <title>台北一日遊</title>
 </head>
 <body style="margin: 0;">
@@ -49,9 +50,9 @@
         </div>
         <div class="modal-signup-body">
             <form class="signform" id="signup">
-                <input type="text" name="name" id="name-2" placeholder="輸入姓名" required>
-                <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
-                <input type="password" name="password" id="password-2" placeholder="輸入密碼" required>
+                <input type="text"  id="name-2" placeholder="輸入姓名" required>
+                <input type="text"  id="email-2" placeholder="輸入電子信箱" required>
+                <input type="password"  id="password-2" placeholder="輸入密碼" required>
                 <button onclick="memberSignUp();return false;">註冊帳戶</button>
             </form>
             <div id="status-2"></div>
@@ -81,18 +82,241 @@
     <div class="userContactInfo" id="userContactInfo">
         <div class="contactInfo-header">您的聯絡資訊</div>
         <form class="contactForm">
-            <div class="yourName">聯絡姓名：<input class="userInputInfo" type="text" placeholder="輸入姓名" required></div>
-            <div class="yourMail">聯絡信箱：<input class="userInputInfo" type="text" placeholder="輸入電子信箱" required></div>
-            <div class="yourPhone">手機號碼：<input class="userInputInfo" type="text"  placeholder="輸入手機" required></div>
+            <div class="yourName">聯絡姓名：<input class="userInputInfo" name="orderName" type="text" placeholder="輸入姓名" name="name" required></div>
+            <div class="yourMail">聯絡信箱：<input class="userInputInfo" name="orderEmail" type="text" placeholder="輸入電子信箱" name="email" required></div>
+            <div class="yourPhone">手機號碼：<input class="userInputInfo" name="orderPhone" type="text"  placeholder="輸入手機" name="phone" required></div>
         </form>
         <div class="cautionInfo">請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
     </div>
 
     <div class="seperator" id="seperator-2"></div>
 
-</div>
-<footer><p> COPYRIGHT © 2021 台北一日遊</p></footer>
+    <div class="formWidth">
+        <form id="payform" class="payform">
+            <div class="test">
+                <div class="form-group card-number-group">
+                    <label for="card-number" class="control-label"><span id="cardtype"></span>卡片號碼：</label>
+                    <div class="form-control card-number"></div>
+                </div>
+                <div class="form-group expiration-date-group">
+                    <label for="expiration-date" class="control-label">過期時間：</label>
+                    <div class="form-control expiration-date" id="tappay-expiration-date"></div>
+                </div>
+                <div class="form-group cvc-group">
+                    <label for="cvc" class="control-label">驗證密碼：</label>
+                    <div class="form-control cvc"></div>
+                </div>
+            </div>
 
-    <script src="../static/javascript/booking.js"></script>
+            <div class="seperator-3" id="seperator-3"></div>
+            <div class="unflex">
+                <div class="finalPrice-1">     
+                        <div>總價：<span id="order-totalPrice"></span>元</div>
+                        <button type="submit" class="btn btn-default" >確認訂購並付款</button>
+                
+                </div>
+            </div>       
+        </form>
+    </div>   
+    
+
+
+
+</div>
+<script src="../static/javascript/booking.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://js.tappaysdk.com/tpdirect/v5.9.0"></script>
+    <script>
+        TPDirect.setupSDK(124000, 'app_nhC8f0XOpm3rPaCTLkX52RdkHujgrZzBUrRhYEMz8s9iYUNiMIL0rbRzPLNv', 'sandbox')
+        TPDirect.card.setup({
+            fields: {
+                number: {
+                    element: '.form-control.card-number',
+                    placeholder: '**** **** **** ****'
+                },
+                expirationDate: {
+                    element: document.getElementById('tappay-expiration-date'),
+                    placeholder: 'MM / YY'
+                },
+                ccv: {
+                    element: $('.form-control.cvc')[0],
+                    placeholder: '後三碼'
+                }
+            },
+            styles: {
+                'input': {
+                    'color': 'gray'
+                },
+                'input.ccv': {
+                    // 'font-size': '16px'
+                },
+                ':focus': {
+                    'color': 'black'
+                },
+                '.valid': {
+                    'color': 'green'
+                },
+                '.invalid': {
+                    'color': 'red'
+                },
+                '@media screen and (max-width: 400px)': {
+                    'input': {
+                        'color': 'orange'
+                    }
+                }
+            }
+        })
+        // listen for TapPay Field
+        TPDirect.card.onUpdate(function (update) {
+            /* Disable / enable submit button depend on update.canGetPrime  */
+            /* ============================================================ */
+
+            // update.canGetPrime === true
+            //     --> you can call TPDirect.card.getPrime()
+            // const submitButton = document.querySelector('button[type="submit"]')
+            if (update.canGetPrime) {
+                // submitButton.removeAttribute('disabled')
+                $('button[type="submit"]').removeAttr('disabled')
+            } else {
+                // submitButton.setAttribute('disabled', true)
+                $('button[type="submit"]').attr('disabled', true)
+            }
+
+
+            /* Change card type display when card type change */
+            /* ============================================== */
+
+            // cardTypes = ['visa', 'mastercard', ...]
+           // var newType = update.cardType === 'unknown' ? '' : update.cardType
+            //$('#cardtype').text(newType)
+
+
+
+            /* Change form-group style when tappay field status change */
+            /* ======================================================= */
+
+            // number 欄位是錯誤的
+            if (update.status.number === 2) {
+                setNumberFormGroupToError('.card-number-group')
+            } else if (update.status.number === 0) {
+                setNumberFormGroupToSuccess('.card-number-group')
+            } else {
+                setNumberFormGroupToNormal('.card-number-group')
+            }
+
+            if (update.status.expiry === 2) {
+                setNumberFormGroupToError('.expiration-date-group')
+            } else if (update.status.expiry === 0) {
+                setNumberFormGroupToSuccess('.expiration-date-group')
+            } else {
+                setNumberFormGroupToNormal('.expiration-date-group')
+            }
+
+            if (update.status.cvc === 2) {
+                setNumberFormGroupToError('.cvc-group')
+            } else if (update.status.cvc === 0) {
+                setNumberFormGroupToSuccess('.cvc-group')
+            } else {
+                setNumberFormGroupToNormal('.cvc-group')
+            }
+        })
+        
+
+       $('form').on('submit', function (event) {
+           event.preventDefault()
+
+            
+            // fix keyboard issue in iOS device
+            forceBlurIos()
+            
+            const tappayStatus = TPDirect.card.getTappayFieldsStatus()
+            console.log(tappayStatus)
+
+            // Check TPDirect.card.getTappayFieldsStatus().canGetPrime before TPDirect.card.getPrime
+            if (tappayStatus.canGetPrime === false) {
+                alert('can not get prime')
+                return
+            }
+
+            // Get prime
+            TPDirect.card.getPrime(function (result) {
+                if (result.status !== 0) {
+                    alert('get prime error ' + result.msg)
+                    return
+                }
+                console.log(result.card.prime)
+                const orderData={
+                    'prime': result.card.prime,
+                    'order': {
+                        'price':orderUserTotalPrice,
+                        'trip':{
+                            'attraction':{
+                                'id':orderUserAttractionID,
+                                'name':orderUserAttraction,
+                                'address':orderUserAttractionAddress,
+                                'image':orderUserAttractionImage
+                            },
+                            'date':orderTripDate,
+                            'time':orderTripTime
+                        },
+                        'contact':{
+                            'name':document.querySelector('input[name="orderName"]').value,
+                            'email':document.querySelector('input[name="orderEmail"]').value,
+                            'phone':document.querySelector('input[name="orderPhone"]').value
+                        }
+                    }
+                }
+                fetch(orderAPI_url,{
+                    method:'POST',
+                    body: JSON.stringify(orderData),
+                    headers: new Headers({
+                "content-type":"application/json"
+                    })
+                })
+                .then(res => res.json())
+                .then(function(data){
+                    if (data.data.payment.status===0){
+                        location.replace(`${BASE_URL}thankyou?number=${data.data.number}`)
+                    } else {
+                        alert('交易失敗，請再試一次');
+                        return
+                    }
+                })
+                
+            })
+        })
+
+        function setNumberFormGroupToError(selector) {
+            $(selector).addClass('has-error')
+            $(selector).removeClass('has-success')
+        }
+
+        function setNumberFormGroupToSuccess(selector) {
+            $(selector).removeClass('has-error')
+            $(selector).addClass('has-success')
+        }
+
+        function setNumberFormGroupToNormal(selector) {
+            $(selector).removeClass('has-error')
+            $(selector).removeClass('has-success')
+        }
+        
+        function forceBlurIos() {
+            if (!isIos()) {
+                return
+            }
+            var input = document.createElement('input')
+            input.setAttribute('type', 'text')
+            // Insert to active element to ensure scroll lands somewhere relevant
+            document.activeElement.prepend(input)
+            input.focus()
+            input.parentNode.removeChild(input)
+        }
+        
+        function isIos() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+    </script>
+
 </body>
 </html>
