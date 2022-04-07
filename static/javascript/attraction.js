@@ -1,5 +1,5 @@
-//const BASE_URL = "http://127.0.0.1:3000";
-const BASE_URL = "http://52.87.119.150:3000";
+const BASE_URL = "http://127.0.0.1:3000";
+//const BASE_URL = "http://52.87.119.150:3000";
 
 
 let data;

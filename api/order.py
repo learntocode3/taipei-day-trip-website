@@ -110,8 +110,8 @@ def createNewOrder():
         tappay_url = 'https://sandbox.tappaysdk.com/tpc/payment/pay-by-prime'
         prime = {
             "prime": req['prime'],
-            "partner_key": 'partner_Dt4FMiBYyoQ94pyucVyV50XLrqlgG6V3TzY055AuzbnMa3k1v7lzdZ3O',
-            "merchant_id": "leontien2022_CTBC",
+            "partner_key": 'partner_UJGBZOMvZwJpqHDtbWPtxErItPyTUdLcnbfZJuERrautEsTS5zxSVTTz',
+            "merchant_id": "leontien2008_CTBC",
             "details":"TapPay TaipeiTrip Test",
             "amount": price,
             "cardholder": {
@@ -123,7 +123,7 @@ def createNewOrder():
         }
         header = {
             'Content-Type': 'application/json',
-            'x-api-key': 'partner_Dt4FMiBYyoQ94pyucVyV50XLrqlgG6V3TzY055AuzbnMa3k1v7lzdZ3O'
+            'x-api-key': 'partner_UJGBZOMvZwJpqHDtbWPtxErItPyTUdLcnbfZJuERrautEsTS5zxSVTTz'
         }       
         body = json.dumps(prime)
 

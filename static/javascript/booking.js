@@ -1,5 +1,5 @@
-//const BASE_URL = "http://127.0.0.1:3000/";
-const BASE_URL = "http://52.87.119.150:3000/";
+const BASE_URL = "http://127.0.0.1:3000/";
+//const BASE_URL = "http://52.87.119.150:3000/";
 const bookingAPI  = `${BASE_URL}api/booking`;
 const userAPI_url =   `${BASE_URL}api/user`;
 const orderAPI_url = `${BASE_URL}api/order`;
@@ -23,8 +23,10 @@ function getBookingInfo(){
             document.body.querySelector("#bookingInfo").innerHTML = "目前沒有任何待預訂的行程";
             document.body.querySelector("#seperator-1").style = "display:none";
             document.body.querySelector("#seperator-2").style = "display:none";
+            document.body.querySelector("#seperator-3").style = "display:none";
             document.body.querySelector("#userContactInfo").innerHTML = "";
-            document.body.querySelector("#payform").innerHTML = "";
+            document.body.querySelector(".credit-card").innerHTML = "";
+            document.body.querySelector(".orderSubmit").innerHTML = "";
             document.body.querySelector("footer").style = "height: 80%;";
             
 
