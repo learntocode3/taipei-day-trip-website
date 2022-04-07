@@ -27,7 +27,7 @@ function getBookingInfo(){
             document.body.querySelector("#userContactInfo").innerHTML = "";
             document.body.querySelector(".credit-card").innerHTML = "";
             document.body.querySelector(".orderSubmit").innerHTML = "";
-            document.body.querySelector("footer").style = "height: 80%;";
+            document.body.querySelector("footer").style.height = "80%";
             
 
 
