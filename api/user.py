@@ -92,6 +92,7 @@ userAPI = Blueprint("user api", __name__)
 def checkUserStatus():
     if "name" in session:
         data = db_getUserInfo(session['name'])
+        print("session?")
         return data
     return {"data": None}
 

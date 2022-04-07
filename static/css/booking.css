@@ -120,8 +120,63 @@
     color: #666666;
 }
 
+/* 信用卡*/
 
-@media(max-width:1100px){
+.tpfield {
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #E8E8E8;
+    margin: 5px 0;
+    padding: 5px;
+    text-indent: 10px;
+}
+.credit-card{
+    width:1000px;
+}
+.card-header{
+    font-weight: 700;
+    font-size: 19px;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.cardInput{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 25px;
+
+}
+.orderSubmit{
+    width:1000px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 70px;
+}
+.priceSum{
+    font-weight: 700;
+    font-size: 19px;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.order-Btn{
+    width:160px;
+    height: 43px;
+    padding: 10px 20px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #FFFFFF;
+    background: #448899;
+    border:none;
+    border-radius: 5px;
+}
+
+
+@media(max-width:1205px){
     .bookingInfo{
         width: 620px;
     }
@@ -134,6 +189,13 @@
     .seperator{
         width: 90%;
     }
+    .credit-card{
+        width:630px;
+    }
+    .orderSubmit{
+        width:630px;
+    }
+
 }
 
 @media(max-width:680px){
@@ -151,7 +213,17 @@
     .bookImg{
         width: 330px;
     }
+    .credit-card{
+        width:350px;
+    }
+    .orderSubmit{
+        width:350px;
+    }
     footer{
         position: relative;
     }
+}
+
+footer{
+    position: relative;
 }

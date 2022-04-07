@@ -2,7 +2,7 @@
 const signButton = document.querySelectorAll('[data-modal-target]')
 const closeButton = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
-
+let orderUserID;
 
 
 signButton.forEach(button => {
@@ -134,7 +134,7 @@ function statusCheck(){
     .then(res => res.json())
     .then(function(data){
         console.log(data.data)
-        
+        //orderUserID=data.data.id;
         if (data.data != null){
             logoutBtn.classList.add('active');
             signinBtn.classList.remove('active');

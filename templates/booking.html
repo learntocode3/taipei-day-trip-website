@@ -9,6 +9,7 @@
     <link rel= "stylesheet" type="text/css" href="../static/css/sign.css">
     <link rel= "stylesheet" type="text/css" href="../static/css/booking.css">
     <script defer src="../static/javascript/sign.js"></script>
+   
     <title>台北一日遊</title>
 </head>
 <body style="margin: 0;">
@@ -49,9 +50,9 @@
         </div>
         <div class="modal-signup-body">
             <form class="signform" id="signup">
-                <input type="text" name="name" id="name-2" placeholder="輸入姓名" required>
-                <input type="text" name="email" id="email-2" placeholder="輸入電子信箱" required>
-                <input type="password" name="password" id="password-2" placeholder="輸入密碼" required>
+                <input type="text"  id="name-2" placeholder="輸入姓名" required>
+                <input type="text"  id="email-2" placeholder="輸入電子信箱" required>
+                <input type="password"  id="password-2" placeholder="輸入密碼" required>
                 <button onclick="memberSignUp();return false;">註冊帳戶</button>
             </form>
             <div id="status-2"></div>
@@ -81,18 +82,47 @@
     <div class="userContactInfo" id="userContactInfo">
         <div class="contactInfo-header">您的聯絡資訊</div>
         <form class="contactForm">
-            <div class="yourName">聯絡姓名：<input class="userInputInfo" type="text" placeholder="輸入姓名" required></div>
-            <div class="yourMail">聯絡信箱：<input class="userInputInfo" type="text" placeholder="輸入電子信箱" required></div>
-            <div class="yourPhone">手機號碼：<input class="userInputInfo" type="text"  placeholder="輸入手機" required></div>
+            <div class="yourName">聯絡姓名：<input class="userInputInfo" name="orderName" type="text" placeholder="輸入姓名" name="name" required></div>
+            <div class="yourMail">聯絡信箱：<input class="userInputInfo" name="orderEmail" type="text" placeholder="輸入電子信箱" name="email" required></div>
+            <div class="yourPhone">手機號碼：<input class="userInputInfo" name="orderPhone" type="text"  placeholder="輸入手機" name="phone" required></div>
         </form>
         <div class="cautionInfo">請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</div>
     </div>
 
     <div class="seperator" id="seperator-2"></div>
 
-</div>
-<footer><p> COPYRIGHT © 2021 台北一日遊</p></footer>
+    <div class="credit-card">
+        <div class="card-header">信用卡付款資訊</div>
+        <div class="cardInfo">    
+            <div class="cardInput">卡片號碼：
+                <div class="tpfield" id="card-number"></div>
+            </div>
+            <div class="cardInput">過期時間：
+                <div class="tpfield" id="card-expiration-date"></div>
+            </div>
+            <div class="cardInput">驗證密碼：
+                <div class="tpfield" id="card-ccv"></div>
+            </div>
+        </div>  
+    </div>
 
-    <script src="../static/javascript/booking.js"></script>
+    <div class="seperator" id="seperator-3"></div>
+
+    <div class="orderSubmit">
+        <div>
+            <div class="priceSum">總價：<span id="order-totalPrice"></span>元</div>
+            <button class="order-Btn" onclick="onSubmit(event);return false;">確認訂購並付款</button>
+        </div>
+    </div>
+
+    
+
+
+
+</div>
+<script src="../static/javascript/booking.js"></script>
+<script src="https://js.tappaysdk.com/tpdirect/v5.9.0"></script>
+<script src="../static/javascript/field.js"></script>    
+<footer class="footer"><p> COPYRIGHT © 2021 台北一日遊</p></footer>
 </body>
 </html>
