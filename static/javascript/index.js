@@ -1,6 +1,6 @@
 // 主程式
-const BASE_URL = "http://127.0.0.1:3000"
-//const BASE_URL = "http://52.87.119.150:3000"
+//const BASE_URL = "http://127.0.0.1:3000"
+const BASE_URL = "http://52.87.119.150:3000"
 const API_BASE_URL = `${BASE_URL}/api/attractions`;        
 
 let PAGE_SIZE = 0;

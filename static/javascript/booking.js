@@ -1,5 +1,5 @@
-const BASE_URL = "http://127.0.0.1:3000/";
-//const BASE_URL = "http://52.87.119.150:3000/";
+//const BASE_URL = "http://127.0.0.1:3000/";
+const BASE_URL = "http://52.87.119.150:3000/";
 const bookingAPI  = `${BASE_URL}api/booking`;
 const userAPI_url =   `${BASE_URL}api/user`;
 const orderAPI_url = `${BASE_URL}api/order`;
