@@ -1,11 +1,11 @@
 from flask import *
-from api.attraction import attractions
-from api.user import userAPI
-from api.booking import bookingAPI
-from api.order import orderAPI
+from apiController.attraction import attractionAPI
+from apiController.user import userAPI
+from apiController.booking import bookingAPI
+from apiController.order import orderAPI
 
 app=Flask(__name__)
-app.register_blueprint(attractions)
+app.register_blueprint(attractionAPI)
 app.register_blueprint(userAPI)
 app.register_blueprint(bookingAPI)
 app.register_blueprint(orderAPI)

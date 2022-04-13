@@ -144,7 +144,7 @@
 .welcomeRight{
     position: absolute;
     max-width: 100%;
-    right:8%;   
+    /*right:8%;*/   
     bottom: 0;
 
 }

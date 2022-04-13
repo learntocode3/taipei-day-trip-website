@@ -2,63 +2,12 @@ from flask import Blueprint
 from flask import *
 import mysql.connector
 from mysql.connector import errorcode
+from apiModel.apiModel import *
 import json
 
-attractions = Blueprint('attractionApi', __name__)
+attractionAPI = Blueprint('attraction api', __name__)
 
-
-def getID(id):
-    cnx = mysql.connector.connect(user='abc',
-                                  password='12345678',
-                                  database="taipeiTrip",
-                                  auth_plugin='mysql_native_password')
-    cursor = cnx.cursor()
-    query = ("SELECT * FROM attractions where id = %s")
-    data_query=(id, )
-    cursor.execute(query, data_query)
-    results = cursor.fetchall()
-    cursor.close()
-    cnx.close()
-    return results
-
-#a = getID(6)
-#print(a)
-
-
-
-def getResults(pages):
-    cnx = mysql.connector.connect(user='abc',
-                                  password='12345678',
-                                  database="taipeiTrip",
-                                  auth_plugin='mysql_native_password')
-    cursor = cnx.cursor()
-    query = ("SELECT * FROM attractions order by id limit 12 offset %s")
-    data_query=(pages, )
-    cursor.execute(query, data_query)
-    results = cursor.fetchall()
-    cursor.close()
-    cnx.close()
-    return results
-
-
-
-def getKeywords(keyword, pages):
-    cnx = mysql.connector.connect(user='abc',
-                                  password='12345678',
-                                  database="taipeiTrip",
-                                  auth_plugin='mysql_native_password')
-    cursor = cnx.cursor()
-    query = ("SELECT * FROM attractions where attractions.name like %s limit 12 offset %s")
-    data_query=('%'+ keyword +'%', pages)
-    cursor.execute(query, data_query)
-    results = cursor.fetchall()
-    cursor.close()
-    cnx.close()
-    return results
-
-
-
-@attractions.route("/api/attraction/<attractionId>")
+@attractionAPI.route("/api/attraction/<attractionId>")
 def getDataById(attractionId):
     try:
         results = getID(attractionId)
@@ -97,7 +46,7 @@ def getDataById(attractionId):
 
 
 
-@attractions.route("/api/attractions")
+@attractionAPI.route("/api/attractions")
 def getAttractions():
     try:
         page = request.args.get('page','0')
