@@ -3,6 +3,7 @@ from apiController.attraction import attractionAPI
 from apiController.user import userAPI
 from apiController.booking import bookingAPI
 from apiController.order import orderAPI
+from settings.settings import SECRET_KEY
 
 app=Flask(__name__)
 app.register_blueprint(attractionAPI)
@@ -10,7 +11,7 @@ app.register_blueprint(userAPI)
 app.register_blueprint(bookingAPI)
 app.register_blueprint(orderAPI)
 
-app.secret_key="any string but secret"
+app.secret_key = SECRET_KEY
 
 
 
